@@ -60,8 +60,8 @@ export class Backend {
         const daemons = {
             mainnet: {
                 ...daemon,
-                remote_host: "",
-                remote_port: 
+                remote_host: "192.210.216.108",
+                remote_port: 26398
             },
             stagenet: {
                 ...daemon,
@@ -104,8 +104,8 @@ export class Backend {
 
         this.remotes = [
             {
-                host: "",
-                port: ""
+                host: "192.210.216.108",
+                port: "26398"
             },
             
         ]
@@ -227,7 +227,7 @@ export class Backend {
         case "open_explorer":
             if (params.type == "tx") {
                 const { net_type } = this.config_data.app
-                const url = net_type === "testnet" ? "" : "http://208.113.132.29:32348//tx/"
+                const url = net_type === "testnet" ? "" : "http://208.113.132.29:32348/tx/"
                 require("electron").shell.openExternal(url + params.id)
             }
             break
